@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>9x.old | Recovery & Safety</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#080808;
+    color:#fff;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111;
+    border-bottom:1px solid #292929;
+    padding:14px;
+}
+
+.nav-top{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-text{
+    color:#00ff88;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#modeButton{
+    background:#00ff88;
+    color:#000;
+    border:0;
+    border-radius:20px;
+    padding:8px 14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.nav-links{
+    max-width:1100px;
+    margin:12px auto 0;
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.nav-links a:hover{
+    color:#00ff88;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:radial-gradient(circle,#123322,#080808 60%);
+}
+
+.hero-logo{
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    border:3px solid #00ff88;
+    object-fit:cover;
+    box-shadow:0 0 30px rgba(0,255,136,.3);
+}
+
+.hero h1{
+    color:#00ff88;
+    font-size:55px;
+    margin:18px 0 5px;
+}
+
+.hero h2{
+    font-size:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:15px auto 25px;
+    color:#aaa;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 20px;
+    margin:5px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-green{
+    background:#00ff88;
+    color:#000;
+}
+
+.btn-outline{
+    color:#00ff88;
+    border:1px solid #00ff88;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.section-title{
+    text-align:center;
+    color:#00ff88;
+    margin-bottom:30px;
+}
+
+/* HIGHLIGHTS */
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.highlight{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:20px;
+    text-align:center;
+}
+
+.highlight:hover{
+    border-color:#00ff88;
+}
+
+.highlight-icon{
+    font-size:32px;
+}
+
+.highlight h3{
+    color:#00ff88;
+}
+
+.highlight p{
+    color:#999;
+    font-size:13px;
+}
+
+/* STATS */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.stat{
+    width:190px;
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:20px;
+    text-align:center;
+}
+
+.stat h2{
+    color:#00ff88;
+    font-size:32px;
+    margin:0;
+}
+
+.stat p{
+    color:#999;
+}
+
+/* DASHBOARD */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.dashboard-card{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:20px;
+    text-align:center;
+}
+
+.dashboard-card:hover{
+    border-color:#00ff88;
+}
+
+.dashboard-icon{
+    font-size:32px;
+}
+
+.dashboard-card h3{
+    color:#00ff88;
+}
+
+.dashboard-card p{
+    color:#999;
+    font-size:13px;
+}
+
+.quick-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+
+.quick-actions a{
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:10px 15px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* STATUS */
+
+.status-box{
+    max-width:800px;
+    margin:auto;
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:14px;
+    padding:25px;
+}
+
+.status-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.status-badge{
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:8px 14px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.status-text{
+    color:#999;
+}
+
+.progress{
+    height:10px;
+    background:#292929;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.progress-bar{
+    width:25%;
+    height:100%;
+    background:#00ff88;
+    transition:.4s;
+}
+
+.status-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.status-buttons button{
+    background:transparent;
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:10px 13px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:14px;
+    padding:23px;
+}
+
+.card:hover{
+    border-color:#00ff88;
+    transform:translateY(-3px);
+}
+
+.card-icon{
+    font-size:38px;
+}
+
+.card h3{
+    color:#00ff88;
+}
+
+.card p{
+    color:#999;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.learn{
+    background:#00ff88;
+    color:#000;
+    border:0;
+    padding:10px 15px;
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* HELP */
+
+.help-intro{
+    max-width:750px;
+    margin:auto;
+    text-align:center;
+    color:#999;
+    line-height:1.6;
+}
+
+.help-search{
+    max-width:800px;
+    margin:25px auto;
+}
+
+.help-search input{
+    width:100%;
+    padding:15px;
+    background:#141414;
+    color:white;
+    border:1px solid #444;
+    border-radius:9px;
+}
+
+.help-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.help-card{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.help-card:hover{
+    border-color:#00ff88;
+}
+
+.help-card h3{
+    color:#00ff88;
+}
+
+.help-card p{
+    color:#999;
+}
+
+/* FAQ */
+
+.faq{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:9px;
+    padding:17px;
+    margin:10px 0;
+}
+
+.faq summary{
+    color:#00ff88;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.faq p{
+    color:#999;
+    line-height:1.6;
+}
+
+.no-results{
+    display:none;
+    text-align:center;
+    color:#ffcc66;
+}
+
+/* GUIDE */
+
+.guide{
+    background:#141414;
+    border-left:4px solid #00ff88;
+    padding:18px;
+    margin-bottom:12px;
+    border-radius:7px;
+    color:#ccc;
+}
+
+/* TRUST */
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.trust-card{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:22px;
+}
+
+.trust-card h3{
+    color:#00ff88;
+}
+
+.trust-card li{
+    color:#aaa;
+    margin:10px 0;
+}
+
+.badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.badge{
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:10px 15px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* WARNING */
+
+.warning{
+    background:#211b00;
+    border:1px solid #665500;
+    color:#ffe98a;
+    padding:20px;
+    border-radius:10px;
+    line-height:1.7;
+}
+
+/* REVIEWS */
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:22px;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#00ff88;
+    color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.stars{
+    color:#ffd700;
+    margin:8px 0;
+}
+
+.review p{
+    color:#999;
+    line-height:1.6;
+}
+
+.demo{
+    color:#777;
+    font-size:11px;
+}
+
+/* SOCIAL */
+
+.social{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.social a{
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:12px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.social a:hover{
+    background:#00ff88;
+    color:#000;
+}
+
+/* CONTACT */
+
+.contact{
+    max-width:700px;
+    margin:auto;
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:14px;
+    padding:28px;
+}
+
+.contact-intro{
+    text-align:center;
+    color:#999;
+}
+
+.contact label{
+    display:block;
+    color:#00ff88;
+    font-weight:bold;
+    margin:16px 0 6px;
+}
+
+.contact input,
+.contact select,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    border-radius:7px;
+    border:1px solid #444;
+    background:#0d0d0d;
+    color:white;
+}
+
+.contact textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    background:#00ff88;
+    color:#000;
+    border:0;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#successMessage{
+    display:none;
+    margin-top:18px;
+    padding:14px;
+    background:#09251a;
+    border:1px solid #00ff88;
+    border-radius:8px;
+    color:#00ff88;
+    text-align:center;
+}
+
+/* MODAL */
+
+#modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(0,0,0,.85);
+    padding:20px;
+}
+
+.modal-box{
+    max-width:550px;
+    margin:80px auto;
+    background:#141414;
+    border:1px solid #00ff88;
+    border-radius:15px;
+    padding:25px;
+}
+
+.modal-box h2{
+    color:#00ff88;
+}
+
+.modal-box p{
+    color:#bbb;
+    line-height:1.7;
+    white-space:pre-line;
+}
+
+.close{
+    float:right;
+    background:none;
+    border:0;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.modal-wa{
+    display:block;
+    background:#00ff88;
+    color:#000;
+    padding:12px;
+    text-align:center;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    border-top:1px solid #292929;
+    color:#777;
+}
+
+/* LIGHT MODE */
+
+.light{
+    background:#f5f5f5;
+    color:#111;
+}
+
+.light nav,
+.light .hero,
+.light .highlight,
+.light .stat,
+.light .dashboard-card,
+.light .status-box,
+.light .card,
+.light .help-card,
+.light .faq,
+.light .trust-card,
+.light .review,
+.light .contact,
+.light .modal-box,
+.light .guide{
+    background:white;
+    color:#111;
+}
+
+.light .nav-links a{
+    color:#111;
+}
+
+.light p,
+.light .card p,
+.light .status-text,
+.light .help-intro,
+.light .help-card p,
+.light .faq p,
+.light .review p,
+.light .contact-intro,
+.light .trust-card li{
+    color:#555;
+}
+
+.light .contact input,
+.light .contact select,
+.light .contact textarea,
+.light .help-search input{
+    background:white;
+    color:#111;
+}
+
+.light .close{
+    color:#111;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .highlight-grid,
+    .dashboard-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services,
+    .reviews,
+    .trust-grid,
+    .help-cards{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:50px 15px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero-logo{
+        width:120px;
+        height:120px;
+    }
+
+    .highlight-grid,
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .status-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    section{
+        padding:40px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="nav-top">
+
+<div class="logo-text">
+9x.old
+</div>
+
+<button id="modeButton" onclick="toggleMode()">
+🌙 Mode
+</button>
+
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#status">Status</a>
+<a href="#help">Help</a>
+<a href="#services">Services</a>
+<a href="#guide">Guide</a>
+<a href="#trust">Trust</a>
+<a href="#reviews">Reviews</a>
+<a href="#social">Social</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+<img
+class="hero-logo"
+src="https://i.ibb.co/ZpS9WDn7/file-00000000bd7c8207a35c5cfb82051e83.png"
+alt="9x.old Logo"
+>
+
+<h1>9x.old</h1>
+
+<h2>Social Media Recovery & Safety Guidance</h2>
+
+<p>
+Professional general guidance for account recovery,
+account security and legitimate reporting.
+</p>
+
+<a
+class="btn btn-green"
+href="https://wa.me/917086041237"
+target="_blank">
+💬 WhatsApp
+</a>
+
+<a
+class="btn btn-outline"
+href="#services">
+🚀 Explore Services
+</a>
+
+</div>
+
+
+<!-- HIGHLIGHTS -->
+
+<div class="highlight-grid">
+
+<div class="highlight">
+<div class="highlight-icon">🔐</div>
+<h3>Secure</h3>
+<p>Safety-focused guidance.</p>
+</div>
+
+<div class="highlight">
+<div class="highlight-icon">⚡</div>
+<h3>Simple</h3>
+<p>Easy-to-follow information.</p>
+</div>
+
+<div class="highlight">
+<div class="highlight-icon">📋</div>
+<h3>Official</h3>
+<p>Official platform methods.</p>
+</div>
+
+<div class="highlight">
+<div class="highlight-icon">💬</div>
+<h3>Direct</h3>
+<p>Quick WhatsApp contact.</p>
+</div>
+
+</div>
+
+
+<!-- STATS -->
+
+<section>
+
+<h2 class="section-title">
+📊 Quick Overview
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>100+</h2>
+<p>Guidance Resources</p>
+</div>
+
+<div class="stat">
+<h2>24+</h2>
+<p>Support Hours</p>
+</div>
+
+<div class="stat">
+<h2>6+</h2>
+<p>Services</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard">
+
+<h2 class="section-title">
+📊 Professional Dashboard
+</h2>
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+<div class="dashboard-icon">🛠️</div>
+<h3>6+</h3>
+<p>Available Services</p>
+</div>
+
+<div class="dashboard-card">
+<div class="dashboard-icon">📚</div>
+<h3>100+</h3>
+<p>Guidance Resources</p>
+</div>
+
+<div class="dashboard-card">
+<div class="dashboard-icon">🛡️</div>
+<h3>Safety</h3>
+<p>Privacy Focused</p>
+</div>
+
+<div class="dashboard-card">
+<div class="dashboard-icon">💬</div>
+<h3>Direct</h3>
+<p>WhatsApp Contact</p>
+</div>
+
+</div>
+
+<div class="quick-actions">
+
+<a href="#services">🛠️ Services</a>
+<a href="#help">❓ Help</a>
+<a href="#status">📊 Status</a>
+<a href="#guide">📚 Guide</a>
+<a href="#trust">🔐 Trust</a>
+<a href="#contact">📩 Request</a>
+
+</div>
+
+</section>
+
+
+<!-- STATUS -->
+
+<section id="status">
+
+<h2 class="section-title">
+📊 Request Status Tracker
+</h2>
+
+<div class="status-box">
+
+<div class="status-top">
+
+<div>
+
+<strong>Current Status</strong>
+
+<p
+class="status-text"
+id="statusText">
+Select a status to preview.
+</p>
+
+</div>
+
+<div
+class="status-badge"
+id="statusBadge">
+Pending
+</div>
+
+</div>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+</div>
+
+</div>
+
+<div class="status-buttons">
+
+<button onclick="setStatus('pending')">
+🔵 Pending
+</button>
+
+<button onclick="setStatus('guidance')">
+🟢 Guidance Available
+</button>
+
+<button onclick="setStatus('completed')">
+⚪ Completed
+</button>
+
+</div>
+
+<p style="color:#777;">
+📌 Demo tracker — not connected to a real ticket system.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- HELP -->
+
+<section id="help">
+
+<h2 class="section-title">
+❓ Help Center
+</h2>
+
+<p class="help-intro">
+Find quick answers about recovery, security,
+copyright reporting and impersonation.
+</p>
+
+<div class="help-search">
+
+<input
+id="helpSearch"
+type="text"
+placeholder="🔎 Search Help Center..."
+oninput="searchHelp()"
+>
+
+</div>
+
+<div class="help-cards">
+
+<div
+class="help-card"
+onclick="filterHelp('recovery')">
+
+<div class="card-icon">🔐</div>
+<h3>Recovery Help</h3>
+<p>Account access and recovery guidance.</p>
+
+</div>
+
+<div
+class="help-card"
+onclick="filterHelp('security')">
+
+<div class="card-icon">🛡️</div>
+<h3>Security Help</h3>
+<p>Protect your account and information.</p>
+
+</div>
+
+<div
+class="help-card"
+onclick="filterHelp('reporting')">
+
+<div class="card-icon">🚨</div>
+<h3>Reporting Help</h3>
+<p>Copyright and impersonation guidance.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section>
+
+<h2 class="section-title">
+📚 Frequently Asked Questions
+</h2>
+
+<div id="faqList">
+
+<div class="faq" data-category="recovery">
+<details>
+<summary>Can you recover my account directly?</summary>
+<p>
+No. We provide general guidance only.
+Use the platform's official recovery methods.
+</p>
+</details>
+</div>
+
+<div class="faq" data-category="security">
+<details>
+<summary>Should I share my password or OTP?</summary>
+<p>
+No. Never share passwords, OTPs, verification codes
+or recovery codes.
+</p>
+</details>
+</div>
+
+<div class="faq" data-category="recovery">
+<details>
+<summary>What should I do if I cannot log in?</summary>
+<p>
+Use the official account recovery option provided
+by the platform and follow its instructions.
+</p>
+</details>
+</div>
+
+<div class="faq" data-category="reporting">
+<details>
+<summary>How can I report impersonation?</summary>
+<p>
+Use the platform's official impersonation reporting
+tool and submit truthful information.
+</p>
+</details>
+</div>
+
+<div class="faq" data-category="reporting">
+<details>
+<summary>Who can submit a copyright report?</summary>
+<p>
+Copyright reports should generally be submitted by
+the copyright owner or an authorized representative.
+</p>
+</details>
+</div>
+
+<div class="faq" data-category="security">
+<details>
+<summary>How can I make my account safer?</summary>
+<p>
+Use a strong unique password, enable two-factor
+authentication when available and review login activity.
+</p>
+</details>
+</div>
+
+<div class="faq" data-category="recovery">
+<details>
+<summary>Do you guarantee account recovery?</summary>
+<p>
+No. Final decisions about account recovery are made
+by the relevant platform.
+</p>
+</details>
+</div>
+
+</div>
+
+<div id="noResults" class="no-results">
+❌ No matching help found.
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">
+🛠️ Professional Services
+</h2>
+
+<div class="services">
+
+<div class="card">
+<div class="card-icon">🔐</div>
+<h3>Instagram Recovery</h3>
+<p>
+General guidance for recovering access through official Instagram methods.
+</p>
+<button
+class="learn"
+onclick="showService(
+'Instagram Recovery',
+'Use Instagram official recovery options.\\n\\nFollow the instructions provided by the platform.\\n\\nNever share your password, OTP or recovery codes.'
+)">
+Learn More →
+</button>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🛡️</div>
+<h3>Hacked Account Assistance</h3>
+<p>
+Safety guidance for potentially compromised accounts.
+</p>
+<button
+class="learn"
+onclick="showService(
+'Hacked Account Assistance',
+'Use the platform official security and recovery tools.\\n\\nReview login activity and secure your account using official settings.'
+)">
+Learn More →
+</button>
+</div>
+
+
+<div class="card">
+<div class="card-icon">📱</div>
+<h3>Disabled Account Guidance</h3>
+<p>
+General guidance about legitimate account appeal options.
+</p>
+<button
+class="learn"
+onclick="showService(
+'Disabled Account Guidance',
+'Follow the platform official appeal process.\\n\\nProvide truthful information and follow the instructions provided by the platform.'
+)">
+Learn More →
+</button>
+</div>
+
+
+<div class="card">
+<div class="card-icon">©️</div>
+<h3>Copyright Reporting</h3>
+<p>
+Guidance for legitimate copyright reporting.
+</p>
+<button
+class="learn"
+onclick="showService(
+'Copyright Reporting',
+'Copyright reports should only be submitted by the copyright owner or an authorized representative.\\n\\nUse official reporting channels and provide accurate information.'
+)">
+Learn More →
+</button>
+</div>
+
+
+<div class="card">
+<div class="card-icon">📄</div>
+<h3>Copyright Notice</h3>
+<p>
+General assistance with preparing a copyright notice.
+</p>
+<button
+class="learn"
+onclick="showService(
+'Copyright Notice',
+'Clearly describe the original work and suspected unauthorized use.\\n\\nAlways provide accurate information.'
+)">
+Learn More →
+</button>
+</div>
+
+
+<div class="card">
+<div class="card-icon">🚨</div>
+<h3>Impersonation Reporting</h3>
+<p>
+Guidance for reporting fake or impersonating accounts.
+</p>
+<button
+class="learn"
+onclick="showService(
+'Impersonation Reporting',
+'Use the official impersonation reporting tools provided by the platform.\\n\\nSubmit truthful information.'
+)">
+Learn More →
+</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GUIDE -->
+
+<section id="guide">
+
+<h2 class="section-title">
+📚 Recovery Process
+</h2>
+
+<div class="guide">
+<b>01 — Identify:</b>
+Understand the account problem.
+</div>
+
+<div class="guide">
+<b>02 — Verify:</b>
+Use the platform's official recovery page.
+</div>
+
+<div class="guide">
+<b>03 — Submit:</b>
+Provide truthful information when requested.
+</div>
+
+<div class="guide">
+<b>
